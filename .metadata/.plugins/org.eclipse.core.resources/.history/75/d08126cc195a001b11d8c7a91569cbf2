@@ -1,0 +1,17 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+Ex03_select_result.jsp<br>
+<%
+	String name = request.getParameter("name");
+	String age = request.getParameter("age");
+	String [] gender =request.getParameterValues("gender");
+	String [] hobby =request.getParameterValues("hobby");
+	String [] color =request.getParameterValues("color");
+
+
+%>
+<%=name %><br>
+<%=age %><br>
+<%=gender[0] %><br>
+<%=hobby[0] %><br>
+<%=color[0] %><br>
