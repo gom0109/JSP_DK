@@ -8,6 +8,7 @@
  table,th,td{
  	border: 1px solid black;
  	border-collapse: collapse;
+ 	padding: 5px;
  }
  
 </style>
@@ -34,6 +35,7 @@
 			for (int j = 2; j <= 9; j++) {
 		%>
 		<td><%=j%> x<%=i%> = <%=i * j%></td>
+		<%-- <td><%=j+ "x"+ i +"="+ i * j%></td> --%>
 		<%
 			}
 		%>
