@@ -18,9 +18,7 @@ Ex07_김동욱_result.jsp
 				out.print(name);
 			%>
 		</td>
-		<%
-			
-		%><td>
+		<td>
 			<%
 				for (int i = 0; i < values.length; i++) {
 					if(values[i].equals("on")){
@@ -32,9 +30,7 @@ Ex07_김동욱_result.jsp
 			}
 			%>
 		</td>
-		<%
-			
-		%>
+		
 	</tr>
 	<%
 		}

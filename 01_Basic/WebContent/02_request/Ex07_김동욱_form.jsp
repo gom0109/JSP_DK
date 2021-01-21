@@ -15,6 +15,7 @@ span{
 <script type="text/javascript">
 	$(document).ready(function(){
 		//alert(1)
+		$('input[name="id"]').focus();
 	})
 	function check(){
 		//alert(1)
@@ -38,6 +39,9 @@ span{
 			alert("구매 상품중 최소 하나를 선택해주세요")
 			return false;
 		}
+		/* if(!$('input[name="product"]')).is(":checked"){
+			
+		} */
 		if($('option:selected').val()=="선택"){
 			alert("배송시간을 선택해주세요")
 			return false;
