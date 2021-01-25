@@ -1,0 +1,50 @@
+drop table member;
+create table member(
+ id varchar2(10) primary key,
+ passwd varchar2(10) not null,
+ name varchar2(10) not null,
+ reg_date date default sysdate
+);
+
+insert into member(id,passwd,name,reg_date)
+values('kim','111','김연아','2010-03-04');
+insert into member(id,passwd,name,reg_date)
+values('park','222','박세리','2020-12-21');
+
+commit;
+select * from member;
+
+
+
+jdbc 프로그래밍 단계
+0 jar 파일 가져오기
+ojdbc8.jar 위치 C:\Oracle\product\12.2.0\dbhome_1\jdbc\lib jar파일 위치
+C:\JSP_DK\04_JDBC\WebContent\WEB-INF\lib jar파일 넣어놓을 위치
+
+servlet-api.jar 위치C:\Tomcat 9.0\lib
+
+1. Oracle 드라이버 로드  Class.forName(oracle.jdbc.driver.OracleDriver)
+2. 계정에 접속	
+	String url="jdbc:oracle:thin:@localhost:1521:orcl";
+	String id="jspid";
+	String pw="jsppw";
+	Connection conn = DriverManager.getConnection(url,id,pw)
+		
+
+3.sql문 분석
+	String sql = "select * from person order by num";
+	PreparedStatement ps = conn.prepareStatement(sql);
+
+4.sql문 실행
+	ResultSet rs = ps.executeQuery(); select
+	int count = ps.executeUpdate() insert,update,delete 성공적으로 실행된 갯수
+	
+5.자원반납 접속끊기
+
+
+
+
+
+
+
+

@@ -9,6 +9,8 @@ C:\JSP_DK\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2250246579.index
 \01_Basic\src
 C:\JSP_DK\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1176988121.index
 \02_ActionTag\src
+C:\JSP_DK\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4061026946.index
+\05_JDBC\src
 C:\JSP_DK\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1622156247.index
 \02_ActionTag\src
 C:\JSP_DK\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3822893984.index
@@ -21,3 +23,5 @@ C:\JSP_DK\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2581695431.index
 \practice\src
 C:\JSP_DK\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3665052755.index
 \02_ActionTag\src
+C:\JSP_DK\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1973981633.index
+\04_JDBC\src
