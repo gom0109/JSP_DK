@@ -20,11 +20,53 @@
 	}
 </style>
 <jsp:useBean id="dao" class="myPkg.EmplDao"></jsp:useBean>
-
+<script type="text/javascript">
+	
+function allDelete(){
+	var chkobj =document.getElementsByName("rowcheck");/* 배열 */
+	var check = document.getElementsByName("checkAll");/* 배열 */
+	if(check[0].checked==true){
+		for(i=0;i<chkobj.length;i++){
+			chkobj[i].checked = true;
+		}
+		
+	}else{
+		for(i=0;i<chkobj.length;i++){
+			chkobj[i].checked = false;
+		}
+	}
+	
+}function insert() {
+	location.href="insertForm.jsp";
+}
+	
+function selectDelete(){
+	flag = false;
+	var chkobj =document.getElementsByName("rowcheck");
+	for(i=0;i<chkobj.length;i++){
+		if(chkobj[i].checked){
+			flag = true;
+		}
+	}
+	if(flag == false){
+		alert("최소 한개는 선택해야합니다")
+		return;
+	}
+	
+	document.myform.submit();
+}
+	
+	
+</script>
 
 select.jsp<br>
+
+<form name="myform" method="post" action="deleteAll.jsp">
+<input type="button" value="삭제" onclick="selectDelete()">
+<input type="button" value="추가" onclick="insert()">
 <table>
 	<tr>
+		<th><input type="checkbox" name="checkAll" onclick="allDelete()"></th>
 		<th>아이디</th>
 		<th>이름</th>
 		<th>부서번호</th>
@@ -44,16 +86,17 @@ select.jsp<br>
 		%>
 		
 		<tr>
+			<td><input type="checkbox" name="rowcheck" value="<%=mid%>"></td>
 			<td><%= mid%></td>
 			<td><%= name%></td>
 			<td><%= did%></td>
 			<td><%= salary%></td>
 			<td><a href="updateForm.jsp?mid=<%=mid %>">수정</a></td>
-			<td><a href="#">삭제</a></td>
+			<td><a href="deleteProc.jsp?mid=<%=mid %>">삭제</a></td>
 		</tr>
 		<%
 	}
 %>
 </table>
-<br>
-<a href="insertForm.jsp">삽입</a>
+</form>
+<!-- <a href="insertForm.jsp">삽입</a> -->

@@ -192,6 +192,72 @@ finally {
 		
 	}
 	
+	public int deleteData(int mid){
+		String sql = "delete from empl where mid = ?";
+		try {
+			ps = conn.prepareStatement(sql);
+			ps.setInt(1, mid);
+			count = ps.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		finally {
+			if(ps != null) {
+				try {
+					ps.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+			if(conn != null) {
+				try {
+					conn.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		
+		return count;
+		
+	}
+	
+	public int deleteCheckData(String [] rowcheck) {
+		String x = "";
+		int cnt=-1;
+		for(int i=1;i<rowcheck.length;i++) {
+			x = x+" or mid="+ Integer.parseInt(rowcheck[i]);
+		}
+		String sql = "delete from empl where mid = ?"+x;
+		try {
+			ps = conn.prepareStatement(sql);
+			ps.setInt(1, Integer.parseInt(rowcheck[0]));
+			cnt = ps.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			if (ps != null) {
+				try {
+					ps.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+
+			}if (conn != null) {
+				try {
+					conn.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+			
+		}
+		return cnt;
+		
+	}
+	
 	
 
 }
