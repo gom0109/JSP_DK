@@ -4,12 +4,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 list.jsp<br>
+
 <style type="text/css">
 	th{
 		background-color: yellow;
 	}
-
+	th,td{
+		padding: 5px
+	}
+	table{
+		text-align: center;
+	}
 </style>
+
 <script type="text/javascript">
 	function insert(){
 		location.href="insertForm.jsp"
@@ -42,15 +49,11 @@ list.jsp<br>
 		}
 		document.myform.submit();
 	}
-
-
 </script>
 
 <%
 	MovieDao dao = new MovieDao();
 	ArrayList<MovieBean> list = dao.selectAll();
-	
-
 %>
 <form method="post" name="myform" action="checkedDelete.jsp">
 <input type="button" value="삭제" onclick="checkedDelete()">
@@ -87,10 +90,7 @@ list.jsp<br>
 					<td><a href="deleteProc.jsp?num=<%=bean.getNum()%>">삭제</a></td>
 				</tr>
 			<%
-			
 		}
-	
-	
 	%>
 </table>
 </form>

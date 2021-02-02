@@ -257,5 +257,61 @@ public class MovieDao {
 
 		return cnt;
 	}
+	
+	
+	public boolean  searchId(String userid) {
+		boolean flag = false;
+		
+		String sql = "select id from movie where id = ?";
+		try {
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, userid);
+			rs = ps.executeQuery();
+			if (rs.next()) {/* 데이터가 존재할때 */
+				flag=true;
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			if (rs != null) {
+				try {
+					rs.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+			if (ps != null) {
+				try {
+					ps.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+			if (conn != null) {
+				try {
+					conn.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		return flag;
+		
+		
+	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
