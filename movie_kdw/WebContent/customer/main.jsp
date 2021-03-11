@@ -22,7 +22,6 @@
 		int randNum = random.nextInt(list.size());
 		link = list.get(randNum);
 	}
-	
 %>
 <div class="videowrapper">
 <iframe width="100%" height="auto"  src="<%=link %>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
