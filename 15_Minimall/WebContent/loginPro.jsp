@@ -19,10 +19,13 @@ loginPro.jsp<br>
 		</script>
 		<%
 	}else{
+		session.setAttribute("mid", id);
+		session.setAttribute("mno", member.getNo());
 		if(member.getId().equals("admin")){//관리자
 			viewPage = "myshop/admin/main.jsp";
+			/* viewPage = request.getContextPath()+"/myshop/admin/main.jsp"; */
 		}else{//일반사용자
-			viewPage = "myshop/display/mall.jsp";
+			viewPage = "myshop/display/mall.jsp?id="+id;
 		}
 		
 		response.sendRedirect(viewPage);

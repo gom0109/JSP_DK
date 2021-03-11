@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 main.jsp<br>
+
 <form method="post" action="loginPro.jsp">
 [로그인 화면]<br><br>
 <link rel="stylesheet" type="text/css" href= "style.css"/>
