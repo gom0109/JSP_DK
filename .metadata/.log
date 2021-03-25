@@ -1809,3 +1809,1677 @@ user global configuration and to define the default location to store repositori
 not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
 EGit might behave differently since they see different configuration options.
 This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+!SESSION 2021-03-11 10:21:00.561 -----------------------------------------------
+eclipse.buildId=4.16.0.I20200604-0540
+java.version=15.0.1
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.egit.mylyn.ui 4 0 2021-03-11 10:21:01.553
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.egit.mylyn.ui [297]
+  Unresolved requirement: Require-Bundle: org.eclipse.mylyn.tasks.ui; bundle-version="[3.20.0,4.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.mylyn.tasks.ui; bundle-version="3.25.1.v20200512-0316"; singleton:="true"
+       org.eclipse.mylyn.tasks.ui [648]
+         Unresolved requirement: Require-Bundle: org.eclipse.mylyn.commons.notifications.feed; bundle-version="1.0.0"
+           -> Bundle-SymbolicName: org.eclipse.mylyn.commons.notifications.feed; bundle-version="1.17.2.v20200813-0821"; singleton:="true"
+              org.eclipse.mylyn.commons.notifications.feed [1009]
+                No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.eclipse.mylyn.team.ui; bundle-version="[3.20.0,4.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.mylyn.team.ui; bundle-version="3.25.1.v20200512-2113"; singleton:="true"
+       org.eclipse.mylyn.team.ui [649]
+         Unresolved requirement: Require-Bundle: org.eclipse.mylyn.tasks.ui; bundle-version="[3.8.0,4.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.mylyn.tasks.ui; bundle-version="3.25.1.v20200512-0316"; singleton:="true"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"] because it is exposed to package 'javax.xml.bind' from resources javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"] and jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle: javax.xml.bind
+  javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"]
+
+Chain 2:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="2.3.3.v20201118-1818"; osgi.wiring.bundle="com.sun.xml.bind"
+  com.sun.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="com.sun.xml.bind"]
+    import: (&(osgi.wiring.package=javax.xml.bind)(&(version>=2.3.3)(!(version>=2.3.4))))
+     |
+    export: osgi.wiring.package: javax.xml.bind
+  jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1845)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1838)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1779)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1743)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1665)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.mylyn.bugzilla.ui 4 0 2021-03-11 10:21:01.586
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.mylyn.bugzilla.ui [616]
+  Unresolved requirement: Require-Bundle: org.eclipse.mylyn.tasks.ui; bundle-version="[3.8.0,4.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.mylyn.tasks.ui; bundle-version="3.25.1.v20200512-0316"; singleton:="true"
+       org.eclipse.mylyn.tasks.ui [648]
+         Unresolved requirement: Require-Bundle: org.eclipse.mylyn.commons.notifications.feed; bundle-version="1.0.0"
+           -> Bundle-SymbolicName: org.eclipse.mylyn.commons.notifications.feed; bundle-version="1.17.2.v20200813-0821"; singleton:="true"
+              org.eclipse.mylyn.commons.notifications.feed [1009]
+                No resolution report for the bundle.  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"] because it is exposed to package 'javax.xml.bind' from resources javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"] and jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle: javax.xml.bind
+  javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"]
+
+Chain 2:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="2.3.3.v20201118-1818"; osgi.wiring.bundle="com.sun.xml.bind"
+  com.sun.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="com.sun.xml.bind"]
+    import: (&(osgi.wiring.package=javax.xml.bind)(&(version>=2.3.3)(!(version>=2.3.4))))
+     |
+    export: osgi.wiring.package: javax.xml.bind
+  jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1845)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1838)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1779)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1743)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1665)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.mylyn.context.tasks.ui 4 0 2021-03-11 10:21:01.601
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.mylyn.context.tasks.ui [630]
+  Unresolved requirement: Require-Bundle: org.eclipse.mylyn.tasks.ui; bundle-version="3.8.0"
+    -> Bundle-SymbolicName: org.eclipse.mylyn.tasks.ui; bundle-version="3.25.1.v20200512-0316"; singleton:="true"
+       org.eclipse.mylyn.tasks.ui [648]
+         Unresolved requirement: Require-Bundle: org.eclipse.mylyn.commons.notifications.feed; bundle-version="1.0.0"
+           -> Bundle-SymbolicName: org.eclipse.mylyn.commons.notifications.feed; bundle-version="1.17.2.v20200813-0821"; singleton:="true"
+              org.eclipse.mylyn.commons.notifications.feed [1009]
+                No resolution report for the bundle.  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"] because it is exposed to package 'javax.xml.bind' from resources javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"] and jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle: javax.xml.bind
+  javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"]
+
+Chain 2:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="2.3.3.v20201118-1818"; osgi.wiring.bundle="com.sun.xml.bind"
+  com.sun.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="com.sun.xml.bind"]
+    import: (&(osgi.wiring.package=javax.xml.bind)(&(version>=2.3.3)(!(version>=2.3.4))))
+     |
+    export: osgi.wiring.package: javax.xml.bind
+  jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1845)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1838)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1779)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1743)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1665)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.mylyn.java.tasks 4 0 2021-03-11 10:21:01.617
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.mylyn.java.tasks [638]
+  Unresolved requirement: Require-Bundle: org.eclipse.mylyn.tasks.ui; bundle-version="[3.8.0,4.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.mylyn.tasks.ui; bundle-version="3.25.1.v20200512-0316"; singleton:="true"
+       org.eclipse.mylyn.tasks.ui [648]
+         Unresolved requirement: Require-Bundle: org.eclipse.mylyn.commons.notifications.feed; bundle-version="1.0.0"
+           -> Bundle-SymbolicName: org.eclipse.mylyn.commons.notifications.feed; bundle-version="1.17.2.v20200813-0821"; singleton:="true"
+              org.eclipse.mylyn.commons.notifications.feed [1009]
+                No resolution report for the bundle.  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"] because it is exposed to package 'javax.xml.bind' from resources javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"] and jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle: javax.xml.bind
+  javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"]
+
+Chain 2:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="2.3.3.v20201118-1818"; osgi.wiring.bundle="com.sun.xml.bind"
+  com.sun.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="com.sun.xml.bind"]
+    import: (&(osgi.wiring.package=javax.xml.bind)(&(version>=2.3.3)(!(version>=2.3.4))))
+     |
+    export: osgi.wiring.package: javax.xml.bind
+  jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1845)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1838)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1779)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1743)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1665)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.mylyn.tasks.bugs 4 0 2021-03-11 10:21:01.628
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.mylyn.tasks.bugs [643]
+  Unresolved requirement: Require-Bundle: org.eclipse.mylyn.tasks.ui; bundle-version="[3.8.0,4.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.mylyn.tasks.ui; bundle-version="3.25.1.v20200512-0316"; singleton:="true"
+       org.eclipse.mylyn.tasks.ui [648]
+         Unresolved requirement: Require-Bundle: org.eclipse.mylyn.commons.notifications.feed; bundle-version="1.0.0"
+           -> Bundle-SymbolicName: org.eclipse.mylyn.commons.notifications.feed; bundle-version="1.17.2.v20200813-0821"; singleton:="true"
+              org.eclipse.mylyn.commons.notifications.feed [1009]
+                No resolution report for the bundle.  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"] because it is exposed to package 'javax.xml.bind' from resources javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"] and jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle: javax.xml.bind
+  javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"]
+
+Chain 2:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="2.3.3.v20201118-1818"; osgi.wiring.bundle="com.sun.xml.bind"
+  com.sun.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="com.sun.xml.bind"]
+    import: (&(osgi.wiring.package=javax.xml.bind)(&(version>=2.3.3)(!(version>=2.3.4))))
+     |
+    export: osgi.wiring.package: javax.xml.bind
+  jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1845)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1838)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1779)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1743)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1665)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.mylyn.tasks.ui 4 0 2021-03-11 10:21:01.638
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.mylyn.tasks.ui [648]
+  Unresolved requirement: Require-Bundle: org.eclipse.mylyn.commons.notifications.feed; bundle-version="1.0.0"
+    -> Bundle-SymbolicName: org.eclipse.mylyn.commons.notifications.feed; bundle-version="1.17.2.v20200813-0821"; singleton:="true"
+       org.eclipse.mylyn.commons.notifications.feed [1009]
+         No resolution report for the bundle.  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"] because it is exposed to package 'javax.xml.bind' from resources javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"] and jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle: javax.xml.bind
+  javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"]
+
+Chain 2:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="2.3.3.v20201118-1818"; osgi.wiring.bundle="com.sun.xml.bind"
+  com.sun.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="com.sun.xml.bind"]
+    import: (&(osgi.wiring.package=javax.xml.bind)(&(version>=2.3.3)(!(version>=2.3.4))))
+     |
+    export: osgi.wiring.package: javax.xml.bind
+  jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1845)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1838)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1779)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1743)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1665)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.mylyn.team.ui 4 0 2021-03-11 10:21:01.649
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.mylyn.team.ui [649]
+  Unresolved requirement: Require-Bundle: org.eclipse.mylyn.tasks.ui; bundle-version="[3.8.0,4.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.mylyn.tasks.ui; bundle-version="3.25.1.v20200512-0316"; singleton:="true"
+       org.eclipse.mylyn.tasks.ui [648]
+         Unresolved requirement: Require-Bundle: org.eclipse.mylyn.commons.notifications.feed; bundle-version="1.0.0"
+           -> Bundle-SymbolicName: org.eclipse.mylyn.commons.notifications.feed; bundle-version="1.17.2.v20200813-0821"; singleton:="true"
+              org.eclipse.mylyn.commons.notifications.feed [1009]
+                No resolution report for the bundle.  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"] because it is exposed to package 'javax.xml.bind' from resources javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"] and jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle: javax.xml.bind
+  javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"]
+
+Chain 2:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="2.3.3.v20201118-1818"; osgi.wiring.bundle="com.sun.xml.bind"
+  com.sun.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="com.sun.xml.bind"]
+    import: (&(osgi.wiring.package=javax.xml.bind)(&(version>=2.3.3)(!(version>=2.3.4))))
+     |
+    export: osgi.wiring.package: javax.xml.bind
+  jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1845)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1838)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1779)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1743)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1665)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.mylyn.wikitext.tasks.ui 4 0 2021-03-11 10:21:01.660
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.mylyn.wikitext.tasks.ui [664]
+  Unresolved requirement: Require-Bundle: org.eclipse.mylyn.tasks.ui; bundle-version="3.7.0"
+    -> Bundle-SymbolicName: org.eclipse.mylyn.tasks.ui; bundle-version="3.25.1.v20200512-0316"; singleton:="true"
+       org.eclipse.mylyn.tasks.ui [648]
+         Unresolved requirement: Require-Bundle: org.eclipse.mylyn.commons.notifications.feed; bundle-version="1.0.0"
+           -> Bundle-SymbolicName: org.eclipse.mylyn.commons.notifications.feed; bundle-version="1.17.2.v20200813-0821"; singleton:="true"
+              org.eclipse.mylyn.commons.notifications.feed [1009]
+                No resolution report for the bundle.  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"] because it is exposed to package 'javax.xml.bind' from resources javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"] and jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle: javax.xml.bind
+  javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"]
+
+Chain 2:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="2.3.3.v20201118-1818"; osgi.wiring.bundle="com.sun.xml.bind"
+  com.sun.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="com.sun.xml.bind"]
+    import: (&(osgi.wiring.package=javax.xml.bind)(&(version>=2.3.3)(!(version>=2.3.4))))
+     |
+    export: osgi.wiring.package: javax.xml.bind
+  jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1845)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1838)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1779)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1743)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1665)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.mylyn.commons.notifications.feed 4 0 2021-03-11 10:21:03.024
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.mylyn.commons.notifications.feed [1009]
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"] because it is exposed to package 'javax.xml.bind' from resources javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"] and jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle: javax.xml.bind
+  javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"]
+
+Chain 2:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="2.3.3.v20201118-1818"; osgi.wiring.bundle="com.sun.xml.bind"
+  com.sun.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="com.sun.xml.bind"]
+    import: (&(osgi.wiring.package=javax.xml.bind)(&(version>=2.3.3)(!(version>=2.3.4))))
+     |
+    export: osgi.wiring.package: javax.xml.bind
+  jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1845)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1838)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1779)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1743)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1665)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.springframework.ide.eclipse.batch 4 0 2021-03-11 10:21:03.046
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.springframework.ide.eclipse.batch [1071]
+  Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.hyperlinks
+    -> Export-Package: org.springframework.ide.eclipse.config.ui.hyperlinks; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.15.202012132206-RELEASE"; version="0.0.0"
+       org.springframework.ide.eclipse.config.ui [1101]
+         Unresolved requirement: Require-Bundle: org.eclipse.mylyn.tasks.ui; bundle-version="[3.7.0,4.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.mylyn.tasks.ui; bundle-version="3.25.1.v20200512-0316"; singleton:="true"
+              org.eclipse.mylyn.tasks.ui [648]
+                Unresolved requirement: Require-Bundle: org.eclipse.mylyn.commons.notifications.feed; bundle-version="1.0.0"
+                  -> Bundle-SymbolicName: org.eclipse.mylyn.commons.notifications.feed; bundle-version="1.17.2.v20200813-0821"; singleton:="true"
+                     org.eclipse.mylyn.commons.notifications.feed [1009]
+                       No resolution report for the bundle.  Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.editors
+    -> Export-Package: org.springframework.ide.eclipse.config.ui.editors; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.15.202012132206-RELEASE"; version="0.0.0"
+  Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.widgets
+    -> Export-Package: org.springframework.ide.eclipse.config.ui.widgets; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.15.202012132206-RELEASE"; version="0.0.0"
+  Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.editors.batch.graph
+    -> Export-Package: org.springframework.ide.eclipse.config.ui.editors.batch.graph; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.15.202012132206-RELEASE"; version="0.0.0"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"] because it is exposed to package 'javax.xml.bind' from resources javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"] and jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle: javax.xml.bind
+  javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"]
+
+Chain 2:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="2.3.3.v20201118-1818"; osgi.wiring.bundle="com.sun.xml.bind"
+  com.sun.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="com.sun.xml.bind"]
+    import: (&(osgi.wiring.package=javax.xml.bind)(&(version>=2.3.3)(!(version>=2.3.4))))
+     |
+    export: osgi.wiring.package: javax.xml.bind
+  jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1845)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1838)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1779)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1743)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1665)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.springframework.ide.eclipse.config.ui 4 0 2021-03-11 10:21:03.081
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.springframework.ide.eclipse.config.ui [1101]
+  Unresolved requirement: Require-Bundle: org.eclipse.mylyn.tasks.ui; bundle-version="[3.7.0,4.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.mylyn.tasks.ui; bundle-version="3.25.1.v20200512-0316"; singleton:="true"
+       org.eclipse.mylyn.tasks.ui [648]
+         Unresolved requirement: Require-Bundle: org.eclipse.mylyn.commons.notifications.feed; bundle-version="1.0.0"
+           -> Bundle-SymbolicName: org.eclipse.mylyn.commons.notifications.feed; bundle-version="1.17.2.v20200813-0821"; singleton:="true"
+              org.eclipse.mylyn.commons.notifications.feed [1009]
+                No resolution report for the bundle.  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"] because it is exposed to package 'javax.xml.bind' from resources javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"] and jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle: javax.xml.bind
+  javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"]
+
+Chain 2:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="2.3.3.v20201118-1818"; osgi.wiring.bundle="com.sun.xml.bind"
+  com.sun.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="com.sun.xml.bind"]
+    import: (&(osgi.wiring.package=javax.xml.bind)(&(version>=2.3.3)(!(version>=2.3.4))))
+     |
+    export: osgi.wiring.package: javax.xml.bind
+  jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1845)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1838)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1779)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1743)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1665)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.springframework.ide.eclipse.metadata 4 0 2021-03-11 10:21:03.100
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.springframework.ide.eclipse.metadata [1111]
+  Unresolved requirement: Require-Bundle: org.eclipse.mylyn.tasks.ui
+    -> Bundle-SymbolicName: org.eclipse.mylyn.tasks.ui; bundle-version="3.25.1.v20200512-0316"; singleton:="true"
+       org.eclipse.mylyn.tasks.ui [648]
+         Unresolved requirement: Require-Bundle: org.eclipse.mylyn.commons.notifications.feed; bundle-version="1.0.0"
+           -> Bundle-SymbolicName: org.eclipse.mylyn.commons.notifications.feed; bundle-version="1.17.2.v20200813-0821"; singleton:="true"
+              org.eclipse.mylyn.commons.notifications.feed [1009]
+                No resolution report for the bundle.  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"] because it is exposed to package 'javax.xml.bind' from resources javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"] and jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle: javax.xml.bind
+  javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"]
+
+Chain 2:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="2.3.3.v20201118-1818"; osgi.wiring.bundle="com.sun.xml.bind"
+  com.sun.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="com.sun.xml.bind"]
+    import: (&(osgi.wiring.package=javax.xml.bind)(&(version>=2.3.3)(!(version>=2.3.4))))
+     |
+    export: osgi.wiring.package: javax.xml.bind
+  jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1845)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1838)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1779)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1743)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1665)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.springframework.ide.eclipse.webflow.ui 4 0 2021-03-11 10:21:03.123
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.springframework.ide.eclipse.webflow.ui [1118]
+  Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.editors
+    -> Export-Package: org.springframework.ide.eclipse.config.ui.editors; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.15.202012132206-RELEASE"; version="0.0.0"
+       org.springframework.ide.eclipse.config.ui [1101]
+         Unresolved requirement: Require-Bundle: org.eclipse.mylyn.tasks.ui; bundle-version="[3.7.0,4.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.mylyn.tasks.ui; bundle-version="3.25.1.v20200512-0316"; singleton:="true"
+              org.eclipse.mylyn.tasks.ui [648]
+                Unresolved requirement: Require-Bundle: org.eclipse.mylyn.commons.notifications.feed; bundle-version="1.0.0"
+                  -> Bundle-SymbolicName: org.eclipse.mylyn.commons.notifications.feed; bundle-version="1.17.2.v20200813-0821"; singleton:="true"
+                     org.eclipse.mylyn.commons.notifications.feed [1009]
+                       No resolution report for the bundle.  Unresolved requirement: Import-Package: org.springframework.ide.eclipse.webflow.ui.editor.outline.webflow
+    -> Export-Package: org.springframework.ide.eclipse.webflow.ui.editor.outline.webflow; bundle-symbolic-name="org.springframework.ide.eclipse.webflow.ui.editor"; bundle-version="3.9.15.202012132206-RELEASE"; version="0.0.0"
+       org.springframework.ide.eclipse.webflow.ui.editor [1119]
+         Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.editors.webflow.graph
+           -> Export-Package: org.springframework.ide.eclipse.config.ui.editors.webflow.graph; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.15.202012132206-RELEASE"; version="0.0.0"
+         Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.hyperlinks
+           -> Export-Package: org.springframework.ide.eclipse.config.ui.hyperlinks; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.15.202012132206-RELEASE"; version="0.0.0"
+         Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.widgets
+           -> Export-Package: org.springframework.ide.eclipse.config.ui.widgets; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.15.202012132206-RELEASE"; version="0.0.0"
+         Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.editors
+           -> Export-Package: org.springframework.ide.eclipse.config.ui.editors; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.15.202012132206-RELEASE"; version="0.0.0"
+  Unresolved requirement: Import-Package: org.springframework.ide.eclipse.webflow.ui.editor
+    -> Export-Package: org.springframework.ide.eclipse.webflow.ui.editor; bundle-symbolic-name="org.springframework.ide.eclipse.webflow.ui.editor"; bundle-version="3.9.15.202012132206-RELEASE"; version="0.0.0"
+  Unresolved requirement: Import-Package: org.springframework.ide.eclipse.webflow.ui.graph
+    -> Export-Package: org.springframework.ide.eclipse.webflow.ui.graph; bundle-symbolic-name="org.springframework.ide.eclipse.webflow.ui.graph"; bundle-version="3.9.15.202012132206-RELEASE"; version="0.0.0"
+       org.springframework.ide.eclipse.webflow.ui.graph [1120]
+         Unresolved requirement: Import-Package: org.springframework.ide.eclipse.webflow.ui.editor
+           -> Export-Package: org.springframework.ide.eclipse.webflow.ui.editor; bundle-symbolic-name="org.springframework.ide.eclipse.webflow.ui.editor"; bundle-version="3.9.15.202012132206-RELEASE"; version="0.0.0"
+         Unresolved requirement: Import-Package: org.springframework.ide.eclipse.webflow.ui.editor.outline.webflow
+           -> Export-Package: org.springframework.ide.eclipse.webflow.ui.editor.outline.webflow; bundle-symbolic-name="org.springframework.ide.eclipse.webflow.ui.editor"; bundle-version="3.9.15.202012132206-RELEASE"; version="0.0.0"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"] because it is exposed to package 'javax.xml.bind' from resources javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"] and jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle: javax.xml.bind
+  javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"]
+
+Chain 2:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="2.3.3.v20201118-1818"; osgi.wiring.bundle="com.sun.xml.bind"
+  com.sun.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="com.sun.xml.bind"]
+    import: (&(osgi.wiring.package=javax.xml.bind)(&(version>=2.3.3)(!(version>=2.3.4))))
+     |
+    export: osgi.wiring.package: javax.xml.bind
+  jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1845)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1838)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1779)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1743)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1665)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.springframework.ide.eclipse.webflow.ui.editor 4 0 2021-03-11 10:21:03.139
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.springframework.ide.eclipse.webflow.ui.editor [1119]
+  Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.editors.webflow.graph
+    -> Export-Package: org.springframework.ide.eclipse.config.ui.editors.webflow.graph; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.15.202012132206-RELEASE"; version="0.0.0"
+       org.springframework.ide.eclipse.config.ui [1101]
+         Unresolved requirement: Require-Bundle: org.eclipse.mylyn.tasks.ui; bundle-version="[3.7.0,4.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.mylyn.tasks.ui; bundle-version="3.25.1.v20200512-0316"; singleton:="true"
+              org.eclipse.mylyn.tasks.ui [648]
+                Unresolved requirement: Require-Bundle: org.eclipse.mylyn.commons.notifications.feed; bundle-version="1.0.0"
+                  -> Bundle-SymbolicName: org.eclipse.mylyn.commons.notifications.feed; bundle-version="1.17.2.v20200813-0821"; singleton:="true"
+                     org.eclipse.mylyn.commons.notifications.feed [1009]
+                       No resolution report for the bundle.  Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.hyperlinks
+    -> Export-Package: org.springframework.ide.eclipse.config.ui.hyperlinks; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.15.202012132206-RELEASE"; version="0.0.0"
+  Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.widgets
+    -> Export-Package: org.springframework.ide.eclipse.config.ui.widgets; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.15.202012132206-RELEASE"; version="0.0.0"
+  Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.editors
+    -> Export-Package: org.springframework.ide.eclipse.config.ui.editors; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.15.202012132206-RELEASE"; version="0.0.0"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"] because it is exposed to package 'javax.xml.bind' from resources javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"] and jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle: javax.xml.bind
+  javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"]
+
+Chain 2:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="2.3.3.v20201118-1818"; osgi.wiring.bundle="com.sun.xml.bind"
+  com.sun.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="com.sun.xml.bind"]
+    import: (&(osgi.wiring.package=javax.xml.bind)(&(version>=2.3.3)(!(version>=2.3.4))))
+     |
+    export: osgi.wiring.package: javax.xml.bind
+  jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1845)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1838)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1779)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1743)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1665)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.springframework.ide.eclipse.webflow.ui.graph 4 0 2021-03-11 10:21:03.154
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.springframework.ide.eclipse.webflow.ui.graph [1120]
+  Unresolved requirement: Import-Package: org.springframework.ide.eclipse.webflow.ui.editor
+    -> Export-Package: org.springframework.ide.eclipse.webflow.ui.editor; bundle-symbolic-name="org.springframework.ide.eclipse.webflow.ui.editor"; bundle-version="3.9.15.202012132206-RELEASE"; version="0.0.0"
+       org.springframework.ide.eclipse.webflow.ui.editor [1119]
+         Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.editors.webflow.graph
+           -> Export-Package: org.springframework.ide.eclipse.config.ui.editors.webflow.graph; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.15.202012132206-RELEASE"; version="0.0.0"
+              org.springframework.ide.eclipse.config.ui [1101]
+                Unresolved requirement: Require-Bundle: org.eclipse.mylyn.tasks.ui; bundle-version="[3.7.0,4.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.mylyn.tasks.ui; bundle-version="3.25.1.v20200512-0316"; singleton:="true"
+                     org.eclipse.mylyn.tasks.ui [648]
+                       Unresolved requirement: Require-Bundle: org.eclipse.mylyn.commons.notifications.feed; bundle-version="1.0.0"
+                         -> Bundle-SymbolicName: org.eclipse.mylyn.commons.notifications.feed; bundle-version="1.17.2.v20200813-0821"; singleton:="true"
+                            org.eclipse.mylyn.commons.notifications.feed [1009]
+                              No resolution report for the bundle.         Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.hyperlinks
+           -> Export-Package: org.springframework.ide.eclipse.config.ui.hyperlinks; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.15.202012132206-RELEASE"; version="0.0.0"
+         Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.widgets
+           -> Export-Package: org.springframework.ide.eclipse.config.ui.widgets; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.15.202012132206-RELEASE"; version="0.0.0"
+         Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.editors
+           -> Export-Package: org.springframework.ide.eclipse.config.ui.editors; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.15.202012132206-RELEASE"; version="0.0.0"
+  Unresolved requirement: Import-Package: org.springframework.ide.eclipse.webflow.ui.editor.outline.webflow
+    -> Export-Package: org.springframework.ide.eclipse.webflow.ui.editor.outline.webflow; bundle-symbolic-name="org.springframework.ide.eclipse.webflow.ui.editor"; bundle-version="3.9.15.202012132206-RELEASE"; version="0.0.0"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"] because it is exposed to package 'javax.xml.bind' from resources javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"] and jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle: javax.xml.bind
+  javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"]
+
+Chain 2:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="2.3.3.v20201118-1818"; osgi.wiring.bundle="com.sun.xml.bind"
+  com.sun.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="com.sun.xml.bind"]
+    import: (&(osgi.wiring.package=javax.xml.bind)(&(version>=2.3.3)(!(version>=2.3.4))))
+     |
+    export: osgi.wiring.package: javax.xml.bind
+  jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1845)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1838)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1779)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1743)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1665)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.springsource.ide.eclipse.commons.gettingstarted 4 0 2021-03-11 10:21:03.167
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.springsource.ide.eclipse.commons.gettingstarted [1141]
+  Unresolved requirement: Require-Bundle: org.springsource.ide.eclipse.dashboard.ui
+    -> Bundle-SymbolicName: org.springsource.ide.eclipse.dashboard.ui; bundle-version="3.9.15.202012132153-RELEASE"; singleton:="true"
+       org.springsource.ide.eclipse.dashboard.ui [1145]
+         Unresolved requirement: Require-Bundle: org.eclipse.mylyn.tasks.ui; bundle-version="[3.7.0,4.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.mylyn.tasks.ui; bundle-version="3.25.1.v20200512-0316"; singleton:="true"
+              org.eclipse.mylyn.tasks.ui [648]
+                Unresolved requirement: Require-Bundle: org.eclipse.mylyn.commons.notifications.feed; bundle-version="1.0.0"
+                  -> Bundle-SymbolicName: org.eclipse.mylyn.commons.notifications.feed; bundle-version="1.17.2.v20200813-0821"; singleton:="true"
+                     org.eclipse.mylyn.commons.notifications.feed [1009]
+                       No resolution report for the bundle.  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"] because it is exposed to package 'javax.xml.bind' from resources javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"] and jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle: javax.xml.bind
+  javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"]
+
+Chain 2:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="2.3.3.v20201118-1818"; osgi.wiring.bundle="com.sun.xml.bind"
+  com.sun.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="com.sun.xml.bind"]
+    import: (&(osgi.wiring.package=javax.xml.bind)(&(version>=2.3.3)(!(version>=2.3.4))))
+     |
+    export: osgi.wiring.package: javax.xml.bind
+  jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1845)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1838)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1779)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1743)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1665)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.springsource.ide.eclipse.dashboard.ui 4 0 2021-03-11 10:21:03.194
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.springsource.ide.eclipse.dashboard.ui [1145]
+  Unresolved requirement: Require-Bundle: org.eclipse.mylyn.tasks.ui; bundle-version="[3.7.0,4.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.mylyn.tasks.ui; bundle-version="3.25.1.v20200512-0316"; singleton:="true"
+       org.eclipse.mylyn.tasks.ui [648]
+         Unresolved requirement: Require-Bundle: org.eclipse.mylyn.commons.notifications.feed; bundle-version="1.0.0"
+           -> Bundle-SymbolicName: org.eclipse.mylyn.commons.notifications.feed; bundle-version="1.17.2.v20200813-0821"; singleton:="true"
+              org.eclipse.mylyn.commons.notifications.feed [1009]
+                No resolution report for the bundle.  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"] because it is exposed to package 'javax.xml.bind' from resources javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"] and jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle: javax.xml.bind
+  javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"]
+
+Chain 2:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="2.3.3.v20201118-1818"; osgi.wiring.bundle="com.sun.xml.bind"
+  com.sun.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="com.sun.xml.bind"]
+    import: (&(osgi.wiring.package=javax.xml.bind)(&(version>=2.3.3)(!(version>=2.3.4))))
+     |
+    export: osgi.wiring.package: javax.xml.bind
+  jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1845)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1838)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1779)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1743)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1665)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.jface 2 0 2021-03-11 10:21:08.869
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2021-03-11 10:21:08.869
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@5ce34685,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@54aacbc7,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.egit.ui 2 0 2021-03-11 10:21:12.587
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\gom01'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+!SESSION 2021-03-11 10:43:58.670 -----------------------------------------------
+eclipse.buildId=4.16.0.I20200604-0540
+java.version=15.0.1
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.egit.mylyn.ui 4 0 2021-03-11 10:43:59.764
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.egit.mylyn.ui [297]
+  Unresolved requirement: Require-Bundle: org.eclipse.mylyn.team.ui; bundle-version="[3.20.0,4.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.mylyn.team.ui; bundle-version="3.25.1.v20200512-2113"; singleton:="true"
+       org.eclipse.mylyn.team.ui [649]
+         Unresolved requirement: Require-Bundle: org.eclipse.mylyn.tasks.ui; bundle-version="[3.8.0,4.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.mylyn.tasks.ui; bundle-version="3.25.1.v20200512-0316"; singleton:="true"
+              org.eclipse.mylyn.tasks.ui [648]
+                Unresolved requirement: Require-Bundle: org.eclipse.mylyn.commons.notifications.feed; bundle-version="1.0.0"
+                  -> Bundle-SymbolicName: org.eclipse.mylyn.commons.notifications.feed; bundle-version="1.17.2.v20200813-0821"; singleton:="true"
+                     org.eclipse.mylyn.commons.notifications.feed [1009]
+                       No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.eclipse.mylyn.tasks.ui; bundle-version="[3.20.0,4.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.mylyn.tasks.ui; bundle-version="3.25.1.v20200512-0316"; singleton:="true"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"] because it is exposed to package 'javax.xml.bind' from resources javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"] and jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle: javax.xml.bind
+  javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"]
+
+Chain 2:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="2.3.3.v20201118-1818"; osgi.wiring.bundle="com.sun.xml.bind"
+  com.sun.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="com.sun.xml.bind"]
+    import: (&(osgi.wiring.package=javax.xml.bind)(&(version>=2.3.3)(!(version>=2.3.4))))
+     |
+    export: osgi.wiring.package: javax.xml.bind
+  jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1845)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1838)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1779)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1743)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1665)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.mylyn.bugzilla.ui 4 0 2021-03-11 10:43:59.799
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.mylyn.bugzilla.ui [616]
+  Unresolved requirement: Require-Bundle: org.eclipse.mylyn.tasks.ui; bundle-version="[3.8.0,4.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.mylyn.tasks.ui; bundle-version="3.25.1.v20200512-0316"; singleton:="true"
+       org.eclipse.mylyn.tasks.ui [648]
+         Unresolved requirement: Require-Bundle: org.eclipse.mylyn.commons.notifications.feed; bundle-version="1.0.0"
+           -> Bundle-SymbolicName: org.eclipse.mylyn.commons.notifications.feed; bundle-version="1.17.2.v20200813-0821"; singleton:="true"
+              org.eclipse.mylyn.commons.notifications.feed [1009]
+                No resolution report for the bundle.  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"] because it is exposed to package 'javax.xml.bind' from resources javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"] and jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle: javax.xml.bind
+  javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"]
+
+Chain 2:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="2.3.3.v20201118-1818"; osgi.wiring.bundle="com.sun.xml.bind"
+  com.sun.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="com.sun.xml.bind"]
+    import: (&(osgi.wiring.package=javax.xml.bind)(&(version>=2.3.3)(!(version>=2.3.4))))
+     |
+    export: osgi.wiring.package: javax.xml.bind
+  jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1845)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1838)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1779)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1743)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1665)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.mylyn.context.tasks.ui 4 0 2021-03-11 10:43:59.817
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.mylyn.context.tasks.ui [630]
+  Unresolved requirement: Require-Bundle: org.eclipse.mylyn.tasks.ui; bundle-version="3.8.0"
+    -> Bundle-SymbolicName: org.eclipse.mylyn.tasks.ui; bundle-version="3.25.1.v20200512-0316"; singleton:="true"
+       org.eclipse.mylyn.tasks.ui [648]
+         Unresolved requirement: Require-Bundle: org.eclipse.mylyn.commons.notifications.feed; bundle-version="1.0.0"
+           -> Bundle-SymbolicName: org.eclipse.mylyn.commons.notifications.feed; bundle-version="1.17.2.v20200813-0821"; singleton:="true"
+              org.eclipse.mylyn.commons.notifications.feed [1009]
+                No resolution report for the bundle.  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"] because it is exposed to package 'javax.xml.bind' from resources javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"] and jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle: javax.xml.bind
+  javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"]
+
+Chain 2:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="2.3.3.v20201118-1818"; osgi.wiring.bundle="com.sun.xml.bind"
+  com.sun.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="com.sun.xml.bind"]
+    import: (&(osgi.wiring.package=javax.xml.bind)(&(version>=2.3.3)(!(version>=2.3.4))))
+     |
+    export: osgi.wiring.package: javax.xml.bind
+  jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1845)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1838)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1779)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1743)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1665)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.mylyn.java.tasks 4 0 2021-03-11 10:43:59.835
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.mylyn.java.tasks [638]
+  Unresolved requirement: Require-Bundle: org.eclipse.mylyn.tasks.ui; bundle-version="[3.8.0,4.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.mylyn.tasks.ui; bundle-version="3.25.1.v20200512-0316"; singleton:="true"
+       org.eclipse.mylyn.tasks.ui [648]
+         Unresolved requirement: Require-Bundle: org.eclipse.mylyn.commons.notifications.feed; bundle-version="1.0.0"
+           -> Bundle-SymbolicName: org.eclipse.mylyn.commons.notifications.feed; bundle-version="1.17.2.v20200813-0821"; singleton:="true"
+              org.eclipse.mylyn.commons.notifications.feed [1009]
+                No resolution report for the bundle.  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"] because it is exposed to package 'javax.xml.bind' from resources javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"] and jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle: javax.xml.bind
+  javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"]
+
+Chain 2:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="2.3.3.v20201118-1818"; osgi.wiring.bundle="com.sun.xml.bind"
+  com.sun.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="com.sun.xml.bind"]
+    import: (&(osgi.wiring.package=javax.xml.bind)(&(version>=2.3.3)(!(version>=2.3.4))))
+     |
+    export: osgi.wiring.package: javax.xml.bind
+  jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1845)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1838)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1779)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1743)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1665)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.mylyn.tasks.bugs 4 0 2021-03-11 10:43:59.854
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.mylyn.tasks.bugs [643]
+  Unresolved requirement: Require-Bundle: org.eclipse.mylyn.tasks.ui; bundle-version="[3.8.0,4.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.mylyn.tasks.ui; bundle-version="3.25.1.v20200512-0316"; singleton:="true"
+       org.eclipse.mylyn.tasks.ui [648]
+         Unresolved requirement: Require-Bundle: org.eclipse.mylyn.commons.notifications.feed; bundle-version="1.0.0"
+           -> Bundle-SymbolicName: org.eclipse.mylyn.commons.notifications.feed; bundle-version="1.17.2.v20200813-0821"; singleton:="true"
+              org.eclipse.mylyn.commons.notifications.feed [1009]
+                No resolution report for the bundle.  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"] because it is exposed to package 'javax.xml.bind' from resources javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"] and jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle: javax.xml.bind
+  javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"]
+
+Chain 2:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="2.3.3.v20201118-1818"; osgi.wiring.bundle="com.sun.xml.bind"
+  com.sun.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="com.sun.xml.bind"]
+    import: (&(osgi.wiring.package=javax.xml.bind)(&(version>=2.3.3)(!(version>=2.3.4))))
+     |
+    export: osgi.wiring.package: javax.xml.bind
+  jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1845)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1838)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1779)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1743)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1665)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.mylyn.tasks.ui 4 0 2021-03-11 10:43:59.876
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.mylyn.tasks.ui [648]
+  Unresolved requirement: Require-Bundle: org.eclipse.mylyn.commons.notifications.feed; bundle-version="1.0.0"
+    -> Bundle-SymbolicName: org.eclipse.mylyn.commons.notifications.feed; bundle-version="1.17.2.v20200813-0821"; singleton:="true"
+       org.eclipse.mylyn.commons.notifications.feed [1009]
+         No resolution report for the bundle.  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"] because it is exposed to package 'javax.xml.bind' from resources javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"] and jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle: javax.xml.bind
+  javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"]
+
+Chain 2:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="2.3.3.v20201118-1818"; osgi.wiring.bundle="com.sun.xml.bind"
+  com.sun.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="com.sun.xml.bind"]
+    import: (&(osgi.wiring.package=javax.xml.bind)(&(version>=2.3.3)(!(version>=2.3.4))))
+     |
+    export: osgi.wiring.package: javax.xml.bind
+  jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1845)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1838)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1779)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1743)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1665)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.mylyn.team.ui 4 0 2021-03-11 10:43:59.903
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.mylyn.team.ui [649]
+  Unresolved requirement: Require-Bundle: org.eclipse.mylyn.tasks.ui; bundle-version="[3.8.0,4.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.mylyn.tasks.ui; bundle-version="3.25.1.v20200512-0316"; singleton:="true"
+       org.eclipse.mylyn.tasks.ui [648]
+         Unresolved requirement: Require-Bundle: org.eclipse.mylyn.commons.notifications.feed; bundle-version="1.0.0"
+           -> Bundle-SymbolicName: org.eclipse.mylyn.commons.notifications.feed; bundle-version="1.17.2.v20200813-0821"; singleton:="true"
+              org.eclipse.mylyn.commons.notifications.feed [1009]
+                No resolution report for the bundle.  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"] because it is exposed to package 'javax.xml.bind' from resources javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"] and jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle: javax.xml.bind
+  javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"]
+
+Chain 2:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="2.3.3.v20201118-1818"; osgi.wiring.bundle="com.sun.xml.bind"
+  com.sun.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="com.sun.xml.bind"]
+    import: (&(osgi.wiring.package=javax.xml.bind)(&(version>=2.3.3)(!(version>=2.3.4))))
+     |
+    export: osgi.wiring.package: javax.xml.bind
+  jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1845)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1838)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1779)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1743)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1665)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.mylyn.wikitext.tasks.ui 4 0 2021-03-11 10:43:59.924
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.mylyn.wikitext.tasks.ui [664]
+  Unresolved requirement: Require-Bundle: org.eclipse.mylyn.tasks.ui; bundle-version="3.7.0"
+    -> Bundle-SymbolicName: org.eclipse.mylyn.tasks.ui; bundle-version="3.25.1.v20200512-0316"; singleton:="true"
+       org.eclipse.mylyn.tasks.ui [648]
+         Unresolved requirement: Require-Bundle: org.eclipse.mylyn.commons.notifications.feed; bundle-version="1.0.0"
+           -> Bundle-SymbolicName: org.eclipse.mylyn.commons.notifications.feed; bundle-version="1.17.2.v20200813-0821"; singleton:="true"
+              org.eclipse.mylyn.commons.notifications.feed [1009]
+                No resolution report for the bundle.  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"] because it is exposed to package 'javax.xml.bind' from resources javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"] and jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle: javax.xml.bind
+  javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"]
+
+Chain 2:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="2.3.3.v20201118-1818"; osgi.wiring.bundle="com.sun.xml.bind"
+  com.sun.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="com.sun.xml.bind"]
+    import: (&(osgi.wiring.package=javax.xml.bind)(&(version>=2.3.3)(!(version>=2.3.4))))
+     |
+    export: osgi.wiring.package: javax.xml.bind
+  jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1845)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1838)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1779)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1743)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1665)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.mylyn.commons.notifications.feed 4 0 2021-03-11 10:44:00.139
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.mylyn.commons.notifications.feed [1009]
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"] because it is exposed to package 'javax.xml.bind' from resources javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"] and jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle: javax.xml.bind
+  javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"]
+
+Chain 2:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="2.3.3.v20201118-1818"; osgi.wiring.bundle="com.sun.xml.bind"
+  com.sun.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="com.sun.xml.bind"]
+    import: (&(osgi.wiring.package=javax.xml.bind)(&(version>=2.3.3)(!(version>=2.3.4))))
+     |
+    export: osgi.wiring.package: javax.xml.bind
+  jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1845)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1838)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1779)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1743)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1665)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.springframework.ide.eclipse.batch 4 0 2021-03-11 10:44:00.160
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.springframework.ide.eclipse.batch [1071]
+  Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.widgets
+    -> Export-Package: org.springframework.ide.eclipse.config.ui.widgets; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.15.202012132206-RELEASE"; version="0.0.0"
+       org.springframework.ide.eclipse.config.ui [1101]
+         Unresolved requirement: Require-Bundle: org.eclipse.mylyn.tasks.ui; bundle-version="[3.7.0,4.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.mylyn.tasks.ui; bundle-version="3.25.1.v20200512-0316"; singleton:="true"
+              org.eclipse.mylyn.tasks.ui [648]
+                Unresolved requirement: Require-Bundle: org.eclipse.mylyn.commons.notifications.feed; bundle-version="1.0.0"
+                  -> Bundle-SymbolicName: org.eclipse.mylyn.commons.notifications.feed; bundle-version="1.17.2.v20200813-0821"; singleton:="true"
+                     org.eclipse.mylyn.commons.notifications.feed [1009]
+                       No resolution report for the bundle.  Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.editors.batch.graph
+    -> Export-Package: org.springframework.ide.eclipse.config.ui.editors.batch.graph; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.15.202012132206-RELEASE"; version="0.0.0"
+  Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.editors
+    -> Export-Package: org.springframework.ide.eclipse.config.ui.editors; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.15.202012132206-RELEASE"; version="0.0.0"
+  Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.hyperlinks
+    -> Export-Package: org.springframework.ide.eclipse.config.ui.hyperlinks; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.15.202012132206-RELEASE"; version="0.0.0"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"] because it is exposed to package 'javax.xml.bind' from resources javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"] and jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle: javax.xml.bind
+  javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"]
+
+Chain 2:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="2.3.3.v20201118-1818"; osgi.wiring.bundle="com.sun.xml.bind"
+  com.sun.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="com.sun.xml.bind"]
+    import: (&(osgi.wiring.package=javax.xml.bind)(&(version>=2.3.3)(!(version>=2.3.4))))
+     |
+    export: osgi.wiring.package: javax.xml.bind
+  jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1845)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1838)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1779)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1743)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1665)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.springframework.ide.eclipse.config.ui 4 0 2021-03-11 10:44:00.182
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.springframework.ide.eclipse.config.ui [1101]
+  Unresolved requirement: Require-Bundle: org.eclipse.mylyn.tasks.ui; bundle-version="[3.7.0,4.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.mylyn.tasks.ui; bundle-version="3.25.1.v20200512-0316"; singleton:="true"
+       org.eclipse.mylyn.tasks.ui [648]
+         Unresolved requirement: Require-Bundle: org.eclipse.mylyn.commons.notifications.feed; bundle-version="1.0.0"
+           -> Bundle-SymbolicName: org.eclipse.mylyn.commons.notifications.feed; bundle-version="1.17.2.v20200813-0821"; singleton:="true"
+              org.eclipse.mylyn.commons.notifications.feed [1009]
+                No resolution report for the bundle.  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"] because it is exposed to package 'javax.xml.bind' from resources javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"] and jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle: javax.xml.bind
+  javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"]
+
+Chain 2:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="2.3.3.v20201118-1818"; osgi.wiring.bundle="com.sun.xml.bind"
+  com.sun.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="com.sun.xml.bind"]
+    import: (&(osgi.wiring.package=javax.xml.bind)(&(version>=2.3.3)(!(version>=2.3.4))))
+     |
+    export: osgi.wiring.package: javax.xml.bind
+  jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1845)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1838)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1779)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1743)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1665)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.springframework.ide.eclipse.metadata 4 0 2021-03-11 10:44:00.198
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.springframework.ide.eclipse.metadata [1111]
+  Unresolved requirement: Require-Bundle: org.eclipse.mylyn.tasks.ui
+    -> Bundle-SymbolicName: org.eclipse.mylyn.tasks.ui; bundle-version="3.25.1.v20200512-0316"; singleton:="true"
+       org.eclipse.mylyn.tasks.ui [648]
+         Unresolved requirement: Require-Bundle: org.eclipse.mylyn.commons.notifications.feed; bundle-version="1.0.0"
+           -> Bundle-SymbolicName: org.eclipse.mylyn.commons.notifications.feed; bundle-version="1.17.2.v20200813-0821"; singleton:="true"
+              org.eclipse.mylyn.commons.notifications.feed [1009]
+                No resolution report for the bundle.  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"] because it is exposed to package 'javax.xml.bind' from resources javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"] and jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle: javax.xml.bind
+  javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"]
+
+Chain 2:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="2.3.3.v20201118-1818"; osgi.wiring.bundle="com.sun.xml.bind"
+  com.sun.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="com.sun.xml.bind"]
+    import: (&(osgi.wiring.package=javax.xml.bind)(&(version>=2.3.3)(!(version>=2.3.4))))
+     |
+    export: osgi.wiring.package: javax.xml.bind
+  jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1845)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1838)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1779)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1743)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1665)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.springframework.ide.eclipse.webflow.ui 4 0 2021-03-11 10:44:00.217
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.springframework.ide.eclipse.webflow.ui [1118]
+  Unresolved requirement: Import-Package: org.springframework.ide.eclipse.webflow.ui.editor
+    -> Export-Package: org.springframework.ide.eclipse.webflow.ui.editor; bundle-symbolic-name="org.springframework.ide.eclipse.webflow.ui.editor"; bundle-version="3.9.15.202012132206-RELEASE"; version="0.0.0"
+       org.springframework.ide.eclipse.webflow.ui.editor [1119]
+         Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.widgets
+           -> Export-Package: org.springframework.ide.eclipse.config.ui.widgets; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.15.202012132206-RELEASE"; version="0.0.0"
+              org.springframework.ide.eclipse.config.ui [1101]
+                Unresolved requirement: Require-Bundle: org.eclipse.mylyn.tasks.ui; bundle-version="[3.7.0,4.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.mylyn.tasks.ui; bundle-version="3.25.1.v20200512-0316"; singleton:="true"
+                     org.eclipse.mylyn.tasks.ui [648]
+                       Unresolved requirement: Require-Bundle: org.eclipse.mylyn.commons.notifications.feed; bundle-version="1.0.0"
+                         -> Bundle-SymbolicName: org.eclipse.mylyn.commons.notifications.feed; bundle-version="1.17.2.v20200813-0821"; singleton:="true"
+                            org.eclipse.mylyn.commons.notifications.feed [1009]
+                              No resolution report for the bundle.         Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.hyperlinks
+           -> Export-Package: org.springframework.ide.eclipse.config.ui.hyperlinks; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.15.202012132206-RELEASE"; version="0.0.0"
+         Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.editors
+           -> Export-Package: org.springframework.ide.eclipse.config.ui.editors; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.15.202012132206-RELEASE"; version="0.0.0"
+         Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.editors.webflow.graph
+           -> Export-Package: org.springframework.ide.eclipse.config.ui.editors.webflow.graph; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.15.202012132206-RELEASE"; version="0.0.0"
+  Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.editors
+    -> Export-Package: org.springframework.ide.eclipse.config.ui.editors; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.15.202012132206-RELEASE"; version="0.0.0"
+  Unresolved requirement: Import-Package: org.springframework.ide.eclipse.webflow.ui.graph
+    -> Export-Package: org.springframework.ide.eclipse.webflow.ui.graph; bundle-symbolic-name="org.springframework.ide.eclipse.webflow.ui.graph"; bundle-version="3.9.15.202012132206-RELEASE"; version="0.0.0"
+       org.springframework.ide.eclipse.webflow.ui.graph [1120]
+         Unresolved requirement: Import-Package: org.springframework.ide.eclipse.webflow.ui.editor.outline.webflow
+           -> Export-Package: org.springframework.ide.eclipse.webflow.ui.editor.outline.webflow; bundle-symbolic-name="org.springframework.ide.eclipse.webflow.ui.editor"; bundle-version="3.9.15.202012132206-RELEASE"; version="0.0.0"
+         Unresolved requirement: Import-Package: org.springframework.ide.eclipse.webflow.ui.editor
+           -> Export-Package: org.springframework.ide.eclipse.webflow.ui.editor; bundle-symbolic-name="org.springframework.ide.eclipse.webflow.ui.editor"; bundle-version="3.9.15.202012132206-RELEASE"; version="0.0.0"
+  Unresolved requirement: Import-Package: org.springframework.ide.eclipse.webflow.ui.editor.outline.webflow
+    -> Export-Package: org.springframework.ide.eclipse.webflow.ui.editor.outline.webflow; bundle-symbolic-name="org.springframework.ide.eclipse.webflow.ui.editor"; bundle-version="3.9.15.202012132206-RELEASE"; version="0.0.0"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"] because it is exposed to package 'javax.xml.bind' from resources javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"] and jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle: javax.xml.bind
+  javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"]
+
+Chain 2:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="2.3.3.v20201118-1818"; osgi.wiring.bundle="com.sun.xml.bind"
+  com.sun.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="com.sun.xml.bind"]
+    import: (&(osgi.wiring.package=javax.xml.bind)(&(version>=2.3.3)(!(version>=2.3.4))))
+     |
+    export: osgi.wiring.package: javax.xml.bind
+  jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1845)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1838)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1779)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1743)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1665)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.springframework.ide.eclipse.webflow.ui.editor 4 0 2021-03-11 10:44:00.237
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.springframework.ide.eclipse.webflow.ui.editor [1119]
+  Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.widgets
+    -> Export-Package: org.springframework.ide.eclipse.config.ui.widgets; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.15.202012132206-RELEASE"; version="0.0.0"
+       org.springframework.ide.eclipse.config.ui [1101]
+         Unresolved requirement: Require-Bundle: org.eclipse.mylyn.tasks.ui; bundle-version="[3.7.0,4.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.mylyn.tasks.ui; bundle-version="3.25.1.v20200512-0316"; singleton:="true"
+              org.eclipse.mylyn.tasks.ui [648]
+                Unresolved requirement: Require-Bundle: org.eclipse.mylyn.commons.notifications.feed; bundle-version="1.0.0"
+                  -> Bundle-SymbolicName: org.eclipse.mylyn.commons.notifications.feed; bundle-version="1.17.2.v20200813-0821"; singleton:="true"
+                     org.eclipse.mylyn.commons.notifications.feed [1009]
+                       No resolution report for the bundle.  Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.hyperlinks
+    -> Export-Package: org.springframework.ide.eclipse.config.ui.hyperlinks; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.15.202012132206-RELEASE"; version="0.0.0"
+  Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.editors
+    -> Export-Package: org.springframework.ide.eclipse.config.ui.editors; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.15.202012132206-RELEASE"; version="0.0.0"
+  Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.editors.webflow.graph
+    -> Export-Package: org.springframework.ide.eclipse.config.ui.editors.webflow.graph; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.15.202012132206-RELEASE"; version="0.0.0"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"] because it is exposed to package 'javax.xml.bind' from resources javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"] and jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle: javax.xml.bind
+  javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"]
+
+Chain 2:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="2.3.3.v20201118-1818"; osgi.wiring.bundle="com.sun.xml.bind"
+  com.sun.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="com.sun.xml.bind"]
+    import: (&(osgi.wiring.package=javax.xml.bind)(&(version>=2.3.3)(!(version>=2.3.4))))
+     |
+    export: osgi.wiring.package: javax.xml.bind
+  jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1845)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1838)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1779)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1743)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1665)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.springframework.ide.eclipse.webflow.ui.graph 4 0 2021-03-11 10:44:00.259
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.springframework.ide.eclipse.webflow.ui.graph [1120]
+  Unresolved requirement: Import-Package: org.springframework.ide.eclipse.webflow.ui.editor.outline.webflow
+    -> Export-Package: org.springframework.ide.eclipse.webflow.ui.editor.outline.webflow; bundle-symbolic-name="org.springframework.ide.eclipse.webflow.ui.editor"; bundle-version="3.9.15.202012132206-RELEASE"; version="0.0.0"
+       org.springframework.ide.eclipse.webflow.ui.editor [1119]
+         Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.widgets
+           -> Export-Package: org.springframework.ide.eclipse.config.ui.widgets; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.15.202012132206-RELEASE"; version="0.0.0"
+              org.springframework.ide.eclipse.config.ui [1101]
+                Unresolved requirement: Require-Bundle: org.eclipse.mylyn.tasks.ui; bundle-version="[3.7.0,4.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.mylyn.tasks.ui; bundle-version="3.25.1.v20200512-0316"; singleton:="true"
+                     org.eclipse.mylyn.tasks.ui [648]
+                       Unresolved requirement: Require-Bundle: org.eclipse.mylyn.commons.notifications.feed; bundle-version="1.0.0"
+                         -> Bundle-SymbolicName: org.eclipse.mylyn.commons.notifications.feed; bundle-version="1.17.2.v20200813-0821"; singleton:="true"
+                            org.eclipse.mylyn.commons.notifications.feed [1009]
+                              No resolution report for the bundle.         Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.hyperlinks
+           -> Export-Package: org.springframework.ide.eclipse.config.ui.hyperlinks; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.15.202012132206-RELEASE"; version="0.0.0"
+         Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.editors
+           -> Export-Package: org.springframework.ide.eclipse.config.ui.editors; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.15.202012132206-RELEASE"; version="0.0.0"
+         Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.editors.webflow.graph
+           -> Export-Package: org.springframework.ide.eclipse.config.ui.editors.webflow.graph; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.15.202012132206-RELEASE"; version="0.0.0"
+  Unresolved requirement: Import-Package: org.springframework.ide.eclipse.webflow.ui.editor
+    -> Export-Package: org.springframework.ide.eclipse.webflow.ui.editor; bundle-symbolic-name="org.springframework.ide.eclipse.webflow.ui.editor"; bundle-version="3.9.15.202012132206-RELEASE"; version="0.0.0"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"] because it is exposed to package 'javax.xml.bind' from resources javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"] and jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle: javax.xml.bind
+  javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"]
+
+Chain 2:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="2.3.3.v20201118-1818"; osgi.wiring.bundle="com.sun.xml.bind"
+  com.sun.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="com.sun.xml.bind"]
+    import: (&(osgi.wiring.package=javax.xml.bind)(&(version>=2.3.3)(!(version>=2.3.4))))
+     |
+    export: osgi.wiring.package: javax.xml.bind
+  jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1845)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1838)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1779)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1743)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1665)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.springsource.ide.eclipse.commons.gettingstarted 4 0 2021-03-11 10:44:00.287
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.springsource.ide.eclipse.commons.gettingstarted [1141]
+  Unresolved requirement: Require-Bundle: org.springsource.ide.eclipse.dashboard.ui
+    -> Bundle-SymbolicName: org.springsource.ide.eclipse.dashboard.ui; bundle-version="3.9.15.202012132153-RELEASE"; singleton:="true"
+       org.springsource.ide.eclipse.dashboard.ui [1145]
+         Unresolved requirement: Require-Bundle: org.eclipse.mylyn.tasks.ui; bundle-version="[3.7.0,4.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.mylyn.tasks.ui; bundle-version="3.25.1.v20200512-0316"; singleton:="true"
+              org.eclipse.mylyn.tasks.ui [648]
+                Unresolved requirement: Require-Bundle: org.eclipse.mylyn.commons.notifications.feed; bundle-version="1.0.0"
+                  -> Bundle-SymbolicName: org.eclipse.mylyn.commons.notifications.feed; bundle-version="1.17.2.v20200813-0821"; singleton:="true"
+                     org.eclipse.mylyn.commons.notifications.feed [1009]
+                       No resolution report for the bundle.  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"] because it is exposed to package 'javax.xml.bind' from resources javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"] and jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle: javax.xml.bind
+  javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"]
+
+Chain 2:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="2.3.3.v20201118-1818"; osgi.wiring.bundle="com.sun.xml.bind"
+  com.sun.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="com.sun.xml.bind"]
+    import: (&(osgi.wiring.package=javax.xml.bind)(&(version>=2.3.3)(!(version>=2.3.4))))
+     |
+    export: osgi.wiring.package: javax.xml.bind
+  jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1845)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1838)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1779)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1743)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1665)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.springsource.ide.eclipse.dashboard.ui 4 0 2021-03-11 10:44:00.307
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.springsource.ide.eclipse.dashboard.ui [1145]
+  Unresolved requirement: Require-Bundle: org.eclipse.mylyn.tasks.ui; bundle-version="[3.7.0,4.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.mylyn.tasks.ui; bundle-version="3.25.1.v20200512-0316"; singleton:="true"
+       org.eclipse.mylyn.tasks.ui [648]
+         Unresolved requirement: Require-Bundle: org.eclipse.mylyn.commons.notifications.feed; bundle-version="1.0.0"
+           -> Bundle-SymbolicName: org.eclipse.mylyn.commons.notifications.feed; bundle-version="1.17.2.v20200813-0821"; singleton:="true"
+              org.eclipse.mylyn.commons.notifications.feed [1009]
+                No resolution report for the bundle.  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"] because it is exposed to package 'javax.xml.bind' from resources javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"] and jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle: javax.xml.bind
+  javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"]
+
+Chain 2:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="2.3.3.v20201118-1818"; osgi.wiring.bundle="com.sun.xml.bind"
+  com.sun.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="com.sun.xml.bind"]
+    import: (&(osgi.wiring.package=javax.xml.bind)(&(version>=2.3.3)(!(version>=2.3.4))))
+     |
+    export: osgi.wiring.package: javax.xml.bind
+  jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1845)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1838)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1779)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1743)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1665)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.core.resources 4 567 2021-03-11 10:44:05.311
+!MESSAGE Workspace restored, but some problems occurred.
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2021-03-11 10:44:05.311
+!MESSAGE Could not read metadata for 'movie_kdw'.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException(/movie_kdw)[567]: java.lang.Exception: The project description file (.project) for 'movie_kdw' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+	at org.eclipse.core.internal.resources.ResourceException.provideStackTrace(ResourceException.java:42)
+	at org.eclipse.core.internal.resources.ResourceException.<init>(ResourceException.java:38)
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:908)
+	at org.eclipse.core.internal.resources.SaveManager.restoreMetaInfo(SaveManager.java:888)
+	at org.eclipse.core.internal.resources.SaveManager.restoreMetaInfo(SaveManager.java:868)
+	at org.eclipse.core.internal.resources.SaveManager.restore(SaveManager.java:724)
+	at org.eclipse.core.internal.resources.SaveManager.startup(SaveManager.java:1555)
+	at org.eclipse.core.internal.resources.Workspace.startup(Workspace.java:2452)
+	at org.eclipse.core.internal.resources.Workspace.open(Workspace.java:2210)
+	at org.eclipse.core.resources.ResourcesPlugin.start(ResourcesPlugin.java:489)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:843)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:1)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:554)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.startActivator(BundleContextImpl.java:835)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:792)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:1015)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:365)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:605)
+	at org.eclipse.osgi.container.Module.start(Module.java:468)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:493)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:117)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:571)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:346)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:398)
+	at org.eclipse.osgi.internal.loader.sources.SingleSourcePackage.loadClass(SingleSourcePackage.java:41)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:473)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:171)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:522)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:151)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:657)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:594)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1447)
+!SUBENTRY 2 org.eclipse.core.resources 4 567 2021-03-11 10:44:05.311
+!MESSAGE The project description file (.project) for 'movie_kdw' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+!STACK 0
+java.lang.Exception: The project description file (.project) for 'movie_kdw' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+	at org.eclipse.core.internal.resources.ResourceException.provideStackTrace(ResourceException.java:42)
+	at org.eclipse.core.internal.resources.ResourceException.<init>(ResourceException.java:38)
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:908)
+	at org.eclipse.core.internal.resources.SaveManager.restoreMetaInfo(SaveManager.java:888)
+	at org.eclipse.core.internal.resources.SaveManager.restoreMetaInfo(SaveManager.java:868)
+	at org.eclipse.core.internal.resources.SaveManager.restore(SaveManager.java:724)
+	at org.eclipse.core.internal.resources.SaveManager.startup(SaveManager.java:1555)
+	at org.eclipse.core.internal.resources.Workspace.startup(Workspace.java:2452)
+	at org.eclipse.core.internal.resources.Workspace.open(Workspace.java:2210)
+	at org.eclipse.core.resources.ResourcesPlugin.start(ResourcesPlugin.java:489)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:843)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:1)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:554)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.startActivator(BundleContextImpl.java:835)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:792)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:1015)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:365)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:605)
+	at org.eclipse.osgi.container.Module.start(Module.java:468)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:493)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:117)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:571)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:346)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:398)
+	at org.eclipse.osgi.internal.loader.sources.SingleSourcePackage.loadClass(SingleSourcePackage.java:41)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:473)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:171)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:522)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:151)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:657)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:594)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1447)
+
+!ENTRY org.eclipse.jface 2 0 2021-03-11 10:44:07.162
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2021-03-11 10:44:07.162
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@747216b6,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@7ee6d5fd,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.egit.ui 2 0 2021-03-11 10:44:10.919
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\gom01'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.wst.server.core 4 0 2021-03-11 10:44:24.542
+!MESSAGE Could not delete C:/JSP_DK/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/movie_kdw/images. May be locked by another process.
+
+!ENTRY org.eclipse.wst.server.core 4 0 2021-03-11 10:44:44.322
+!MESSAGE Could not delete C:/JSP_DK/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/movie_kdw/images. May be locked by another process.
+
+!ENTRY org.eclipse.wst.server.core 4 0 2021-03-11 10:45:09.445
+!MESSAGE Could not delete C:/JSP_DK/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/movie_kdw/images. May be locked by another process.

@@ -159,10 +159,7 @@
 </Context><Context docBase="C:\JSP_DK\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\13_Board" path="/13_Board" reloadable="true" source="org.eclipse.jst.jee.server:13_Board"/><Context docBase="C:\JSP_DK\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\14_Upload" path="/14_Upload" reloadable="true" source="org.eclipse.jst.jee.server:14_Upload"/><Context docBase="C:\JSP_DK\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\15_Minimall" path="/15_Minimall" reloadable="true" source="org.eclipse.jst.jee.server:15_Minimall">
 	<Resource auth="Container" driverClassName="oracle.jdbc.driver.OracleDriver" factory="org.apache.commons.dbcp.BasicDataSourceFactory" maxActive="500" minIdle="100" name="jdbc/OracleDB" password="jsppw" type="javax.sql.DataSource" url="jdbc:oracle:thin:@localhost:1521:orcl" username="jspid"/>
 
-</Context><Context docBase="C:\JSP_DK\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\movie_kdw" path="/movie_kdw" reloadable="true" source="org.eclipse.jst.jee.server:movie_kdw">
-	<Resource auth="Container" driverClassName="oracle.jdbc.driver.OracleDriver" factory="org.apache.commons.dbcp.BasicDataSourceFactory" maxActive="500" minIdle="100" name="jdbc/OracleDB" password="jsppw" type="javax.sql.DataSource" url="jdbc:oracle:thin:@localhost:1521:orcl" username="jspid"/>
-
-</Context></Host>
+</Context><Context docBase="C:\JSP_DK\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\movie_kdw" path="/movie_kdw" reloadable="true" source="org.eclipse.jst.jee.server:movie_kdw"/></Host>
     </Engine>
   </Service>
 </Server>
